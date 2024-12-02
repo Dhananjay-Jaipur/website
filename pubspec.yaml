@@ -1,0 +1,63 @@
+name: portfolio
+description: "company portfolio"
+publish_to: 'none' 
+version: 1.0.0+1
+environlogont:
+  sdk: '>=3.4.3 <4.0.0'
+
+#===================================================
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #================== package ======================
+  cupertino_icons:
+  url_launcher:
+  web:
+  http:
+  mailer:
+  responsive_builder:
+  flutter_launcher_icons:
+  flutter_animate_on_scroll:
+  device_preview:
+
+#===================================================
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "asset/images/logo-modified.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "asset/images/logo-modified.png"
+    background_color: "#hexcode"
+    thelogo_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "asset/images/logo-modified.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "asset/images/logo-modified.png"
+
+  flutter_lints: ^3.0.0
+
+#===================================================
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - asset/images/
+    - asset/icon/
+
+  fonts:
+   - family: doto
+     fonts:
+       - asset: asset/font/Doto-all.ttf
+#===================================================
