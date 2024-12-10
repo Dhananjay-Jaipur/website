@@ -2,7 +2,7 @@ name: portfolio
 description: "company portfolio"
 publish_to: 'none' 
 version: 1.0.0+1
-environlogont:
+environment:
   sdk: '>=3.4.3 <4.0.0'
 
 #===================================================
@@ -21,6 +21,12 @@ dependencies:
   flutter_launcher_icons:
   flutter_animate_on_scroll:
   device_preview:
+  widget_and_text_animator: 
+  carousel_slider: 
+  visibility_detector:
+  animated_text_kit:
+  card_swiper: 
+  stacked_card_carousel: 
 
 #===================================================
 

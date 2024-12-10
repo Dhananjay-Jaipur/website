@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/components/header.dart';
 import 'package:portfolio/pages/ContactPage.dart';
-import 'package:portfolio/pages/ExperiencePage.dart';
 import 'package:portfolio/pages/ProjectPage.dart';
+import 'package:portfolio/pages/clients.dart';
+import 'package:portfolio/pages/counts.dart';
 import 'package:portfolio/pages/homePage.dart';
+import 'package:portfolio/pages/industries.dart';
 import 'package:portfolio/pages/languagePage.dart';
-import 'package:portfolio/pages/skillPage.dart';
+import 'package:portfolio/pages/services.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -25,6 +27,7 @@ class _HomeState extends State<Home> {
     var projectKey = GlobalKey();
     var contactKey = GlobalKey();
     var langKey = GlobalKey();
+    var countKey = GlobalKey();
 
       return Scaffold(
 
@@ -41,14 +44,20 @@ class _HomeState extends State<Home> {
                 // HOME:::
                 HomePage(homeKey: homeKey,),
 
-                // SKILL:::
-                Skillpage(skillKey: skillKey, context: context,),
+                // SERVICES:::
+                ServicesPage(skillKey: skillKey, context: context,),
 
-                // LANGUAGES KNOWN::::
+                // SKILL:::
                 langPage(langKey: langKey,),
 
-                // EXPERIENCE:::
-                ExperiencePage(experienceKey: experienceKey),
+                // INDUSTRY:::
+                IndustryPage(),
+
+                // CLIENTS:::
+                ClientsPage(),
+
+                // COUNTER:::
+                CountPage(countkey: countKey,),
 
                 // PROJECTS:::
                 ProjectPage(projectKey: projectKey,),

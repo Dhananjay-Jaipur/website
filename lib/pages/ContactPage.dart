@@ -11,7 +11,7 @@ class Contactpage extends StatefulWidget {
 
   final contactKey;
 
-  Contactpage({super.key, required Key this.contactKey});
+  const Contactpage({super.key, required Key this.contactKey});
 
   @override
   State<Contactpage> createState() => _ContactpageState();
@@ -71,13 +71,13 @@ class _ContactpageState extends State<Contactpage> {
   //
   // }
 
-  Container Desktop(final _currentWidth, final _currentHeight, final context){
+  Container Desktop(final currentWidth, final currentHeight, final context){
 
     return Container(
       key: widget.contactKey,
       margin: const EdgeInsets.only(top: 60,),
-      height: _currentHeight,
-      width: _currentWidth,
+      height: currentHeight,
+      width: currentWidth,
       decoration: const BoxDecoration(
         color: Colors.black,
       ),
@@ -91,9 +91,9 @@ class _ContactpageState extends State<Contactpage> {
 
           const SizedBox(height: 50,),
 
-          Container(
-            height: _currentHeight/2.1,
-            width: _currentWidth/2.1,
+          SizedBox(
+            height: currentHeight/2.1,
+            width: currentWidth/2.1,
             child: Column(
               children: [
                 Row(
@@ -180,7 +180,7 @@ class _ContactpageState extends State<Contactpage> {
           const SizedBox(height: 30,),
 
           Container(
-            width: _currentWidth/3.5,
+            width: currentWidth/3.5,
             constraints: const BoxConstraints(minHeight: 120),
             child: Column(
               children: [
@@ -209,7 +209,7 @@ class _ContactpageState extends State<Contactpage> {
                     const SizedBox(width: 30,),
 
                     Link(
-                      uri: Uri.parse("https://www.linkedin.com/in/dhananjay-sharma-5615312b6/"),
+                      uri: Uri.parse("https://www.linkedin.com/in/dhananjay-9085a9340/"),
                       target: LinkTarget.blank,
                       builder: (context, link) => Container(
                         constraints: const BoxConstraints(maxHeight: 50, maxWidth: 50),
@@ -223,13 +223,13 @@ class _ContactpageState extends State<Contactpage> {
                     const SizedBox(width: 30,),
 
                     Link(
-                      uri: Uri.parse("https://t.me/dhananjayjaipur"),
+                      uri: Uri.parse("https://wa.me/8209570543"),
                       target: LinkTarget.blank,
                       builder: (context, link) => Container(
                         constraints: const BoxConstraints(maxHeight: 50, maxWidth: 50),
                         child: InkWell(
                           onTap: link,
-                          child: Image.asset("asset/icon/icons8-telegram-48.png",),
+                          child: Image.asset("asset/icon/whatsapp.png",),
                         ),
                       ),
                     ),
@@ -245,7 +245,7 @@ class _ContactpageState extends State<Contactpage> {
     );
   }
 
-  Container Mobile(final _currentWidth, final _currentHeight, final context){
+  Container Mobile(final currentWidth, final currentHeight, final context){
 
     return Container(
       key: widget.contactKey,
@@ -267,9 +267,9 @@ class _ContactpageState extends State<Contactpage> {
 
                 const SizedBox(height: 50,),
 
-                Container(
-                  height: _currentHeight/1.2,
-                  width: _currentWidth * 0.8,
+                SizedBox(
+                  height: currentHeight/1.2,
+                  width: currentWidth * 0.8,
                   // constraints: BoxConstraints(maxHeight: 500, maxWidth: 200),
                   child: Column(
                     children: [
@@ -355,17 +355,17 @@ class _ContactpageState extends State<Contactpage> {
           ),
 
           Positioned(
-            bottom: _currentHeight * .3,
+            bottom: currentHeight * .3,
             left: 0,
             right: 0,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: _currentWidth * .2),
-              child: Center(child: Divider()),
+              padding: EdgeInsets.symmetric(horizontal: currentWidth * .2),
+              child: const Center(child: Divider()),
             ),
           ),
 
           Positioned(
-            bottom: _currentHeight * .2,
+            bottom: currentHeight * .2,
             left: 0,
             right: 0,
             child: Row(
@@ -388,7 +388,7 @@ class _ContactpageState extends State<Contactpage> {
                 const SizedBox(width: 30,),
 
                 Link(
-                  uri: Uri.parse("https://www.linkedin.com/in/dhananjay-sharma-5615312b6/"),
+                  uri: Uri.parse("https://www.linkedin.com/in/dhananjay-9085a9340/"),
                   target: LinkTarget.blank,
                   builder: (context, link) => Container(
                     constraints: const BoxConstraints(maxHeight: 50, maxWidth: 50),
@@ -402,13 +402,13 @@ class _ContactpageState extends State<Contactpage> {
                 const SizedBox(width: 30,),
 
                 Link(
-                  uri: Uri.parse("https://t.me/dhananjayjaipur"),
+                  uri: Uri.parse("https://wa.me/8209570543"),
                   target: LinkTarget.blank,
                   builder: (context, link) => Container(
                     constraints: const BoxConstraints(maxHeight: 50, maxWidth: 50),
                     child: InkWell(
                       onTap: link,
-                      child: Image.asset("asset/icon/icons8-telegram-48.png",),
+                      child: Image.asset("asset/icon/whatsapp.png",),
                     ),
                   ),
                 ),
@@ -425,12 +425,13 @@ class _ContactpageState extends State<Contactpage> {
   @override
   Widget build(BuildContext context) {
 
-    final _currentWidth = MediaQuery.of(context).size.width;
-    final _currentHeight = MediaQuery.of(context).size.height;
+    final currentWidth = MediaQuery.of(context).size.width;
+    final currentHeight = MediaQuery.of(context).size.height;
 
-    if(_currentWidth>800)
-      return Desktop(_currentWidth, _currentHeight, context);
-    else
-      return Mobile(_currentWidth, _currentHeight, context);
+    if(currentWidth>800) {
+      return Desktop(currentWidth, currentHeight, context);
+    } else {
+      return Mobile(currentWidth, currentHeight, context);
+    }
   }
 }

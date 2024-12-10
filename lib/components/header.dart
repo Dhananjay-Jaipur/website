@@ -29,15 +29,7 @@ class Header extends StatelessWidget {
         color: Colors.transparent,
       ),
       child: Row(
-        children: [
-          const Text(
-            "</mr_developer/>",
-            style: TextStyle(
-              color: Colors.white54,
-              fontSize: 40,
-              fontFamily: "source code pro",
-            ),
-          ),
+        children: [          
           const Spacer(),
           TextButton(
             onPressed: () {
@@ -53,16 +45,7 @@ class Header extends StatelessWidget {
               Scrollable.ensureVisible(skillKey.currentContext!);
             },
             child: const Text(
-              "skill",
-              style: TextStyle(color: Colors.white54),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              Scrollable.ensureVisible(experienceKey.currentContext!);
-            },
-            child: const Text(
-              "experience",
+              "services",
               style: TextStyle(color: Colors.white54),
             ),
           ),
@@ -102,33 +85,18 @@ class Header extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
         color: Colors.transparent,
       ),
-      child: const Row(
-        children: [
-          const Text(
-            "</mr_developer/>",
-            style: TextStyle(
-              color: Colors.white54,
-              fontSize: 30,
-              fontFamily: "source code pro",
-            ),
-          ),
-
-          const Spacer(),
-
-          // IconButton(onPressed: sideDrawer, icon: const Icon(Icons.menu),),
-        ],
-      ),
+      
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final _currentWidth = MediaQuery.of(context).size.width;
-    final _currentHeight = MediaQuery.of(context).size.height;
+    final currentWidth = MediaQuery.of(context).size.width;
 
-    if (_currentWidth >= 900)
+    if (currentWidth >= 900) {
       return Desktop();
-    else
+    } else {
       return Mobile();
+    }
   }
 }
